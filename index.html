@@ -1,67 +1,100 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Genişler Kuyumculuk</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #fff8f0;
-            color: #4a3c31;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #d4af37;
-            padding: 30px 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            color: #fff;
-            font-weight: 700;
-        }
-        main {
-            padding: 40px 20px;
-        }
-        p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-        }
-        .contact {
-            font-size: 1rem;
-            color: #6b5e3c;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 15px;
-            background: #f0e6cc;
-            font-size: 0.9rem;
-            color: #7a6a43;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genişler Kuyumculuk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f8f8f8;
+    }
+    header {
+      background-color: #bfa76f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #eee;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1562158070-57b7a0ceac0e');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      text-shadow: 2px 2px 10px #000;
+    }
+    .content {
+      padding: 40px;
+      text-align: center;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 250px;
+      height: 250px;
+      margin: 10px;
+      object-fit: cover;
+      border: 3px solid #ddd;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Genişler Kuyumculuk</h1>
-    </header>
-    <main>
-        <p>Kalite ve güvenle kuyumculuk hizmetinizdeyiz.<br />
-        En özel tasarımlar, uygun fiyatlar ve güvenilir alışveriş için bizi tercih edin.</p>
-        <p class="contact">
-            📞 Telefon: +90 555 123 45 67<br />
-            📍 Adres: İstanbul, Kadıköy<br />
-            📧 E-posta: info@genislerkuyumculuk.com
-        </p>
-    </main>
-    <footer>
-        © 2025 Genişler Kuyumculuk. Tüm hakları saklıdır.
-    </footer>
+
+  <header>
+    <h1>Genişler Kuyumculuk</h1>
+    <p>Kalitenin ve Zarafetin Adresi</p>
+  </header>
+
+  <nav>
+    <a href="#">Anasayfa</a>
+    <a href="#">Ürünler</a>
+    <a href="#">Hakkımızda</a>
+    <a href="#">İletişim</a>
+  </nav>
+
+  <div class="hero">
+    Göz Alıcı Takılar
+  </div>
+
+  <div class="content">
+    <h2>Popüler Ürünler</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1589987601389-f13d1f397b29" alt="Altın Kolye">
+      <img src="https://images.unsplash.com/photo-1591084728795-1149f1c1fbb3" alt="Bilezik">
+      <img src="https://images.unsplash.com/photo-1611852313281-2662532b3b19" alt="Yüzük">
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Genişler Kuyumculuk | Tüm Hakları Saklıdır</p>
+    <p>Adres: İstanbul, Türkiye | Tel: 0 (555) 555 55 55</p>
+  </footer>
+
 </body>
 </html>
