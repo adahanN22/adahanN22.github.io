@@ -1,100 +1,78 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Genişler Kuyumculuk</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #f8f8f8;
-    }
-    header {
-      background-color: #bfa76f;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background-color: #eee;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    .hero {
-      background-image: url('https://images.unsplash.com/photo-1562158070-57b7a0ceac0e');
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 40px;
-      text-shadow: 2px 2px 10px #000;
-    }
-    .content {
-      padding: 40px;
-      text-align: center;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .gallery img {
-      width: 250px;
-      height: 250px;
-      margin: 10px;
-      object-fit: cover;
-      border: 3px solid #ddd;
-      border-radius: 10px;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENİSLER KUYUMCULUK</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>Genişler Kuyumculuk</h1>
-    <p>Kalitenin ve Zarafetin Adresi</p>
-  </header>
-
-  <nav>
-    <a href="#">Anasayfa</a>
-    <a href="#">Ürünler</a>
-    <a href="#">Hakkımızda</a>
-    <a href="#">İletişim</a>
-  </nav>
-
-  <div class="hero">
-    Göz Alıcı Takılar
-  </div>
-
-  <div class="content">
-    <h2>Popüler Ürünler</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1589987601389-f13d1f397b29" alt="Altın Kolye">
-      <img src="https://images.unsplash.com/photo-1591084728795-1149f1c1fbb3" alt="Bilezik">
-      <img src="https://images.unsplash.com/photo-1611852313281-2662532b3b19" alt="Yüzük">
+    <!-- Arka plan görseli veya videosu -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="background-video">
+            <source src="assets/Video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-  </div>
 
-  <footer>
-    <p>© 2025 Genişler Kuyumculuk | Tüm Hakları Saklıdır</p>
-    <p>Adres: İstanbul, Türkiye | Tel: 0 (555) 555 55 55</p>
-  </footer>
+    <!-- Üstteki "Merkez" ve "Şube" butonları -->
+    <div class="top-buttons">
+        <a href="https://www.google.com/maps/place/Seyyid+Kuyumculuk/@37.0690654,37.3673896,21z/data=!4m6!3m5!1s0x1531e14b2fe10b63:0x4ef43c0948dbf8c9!8m2!3d37.0690667!4d37.3674922!16s%2Fg%2F1td__vfw?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="button">
+            <img src="assets/Map.png" alt="Map">
+            <span>MERKEZ</span>
+        </a>
+        <a href="https://www.google.com/maps/place/Seyyid+Kuyumculuk/@37.0609564,37.3796766,17z/data=!3m1!4b1!4m6!3m5!1s0x1531e14b31d6dab1:0x2b4863c8e14e8177!8m2!3d37.0609521!4d37.3822515!16s%2Fg%2F11q2ykgn1f?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="button">
+            <img src="assets/Map.png" alt="Map">
+            <span>ŞUBE</span>
+        </a>
+    </div>
+
+    <!-- İkonlar -->
+    <div class="icons">
+        <a href="tel:05334834727" target="_blank"><img src="assets/Phone.png" alt="Phone"></a>
+        <a href="https://api.whatsapp.com/send/?phone=%2B905465470444&text&type=phone_number&app_absent=0" target="_blank"><img src="assets/WP.png" alt="WP"></a>
+        <a href="https://www.instagram.com/seyyidkuyumculuk/" target="_blank"><img src="assets/Instagram.png" alt="Instagram"></a>
+        <a href="mailto:someone@example.com"><img src="assets/Mail.png" alt="Mail"></a>
+        <a href="https://www.tiktok.com/@seyyidkuyumculuk"><img src="assets/Tiktok.png" alt="Tiktok"></a>
+        <a href="https://www.google.com/search?hl=tr-TR&gl=tr&q=Seyyid+Kuyumculuk,+De%C4%9Firmi%C3%A7em+Mahallesi+Gazimuhtarpa%C5%9Fa+Bulvar%C4%B1+N0:23/D,+27090+%C5%9Eehitkamil&ludocid=5689238239850526921&lsig=AB86z5W8wHgSSgeW1Jymkm8ys60O#lrd=0x1531e14b2fe10b63:0x4ef43c0948dbf8c9,3"><img src="assets/Google.png" alt="Google"></a>
+        <a href="https://www.facebook.com/seyyidkuyumculuk"><img src="assets/Facebook.png" alt="Facebook"></a>
+        <a href="http://www.seyyid.com.tr/"><img src="assets/Web.png" alt="Web"></a>
+        <!-- Diğer ikonlar burada devam eder -->
+    </div>
+
+    <!-- JavaScript kodu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('background-video');
+            video.play().catch(function(error) {
+                console.log('Otomatik oynatma başarısız:', error);
+            });
+        });
+    </script>
 
 </body>
+</html>
+
 </html>
