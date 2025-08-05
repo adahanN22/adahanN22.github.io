@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Genişler Kuyumculuk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
+      background-color: #fffdf6;
       color: #333;
     }
     header {
@@ -17,24 +18,37 @@
       padding: 2rem;
       text-align: center;
     }
-    nav {
-      background-color: #333;
-      padding: 0.5rem;
-      text-align: center;
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      margin: 0;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
+    header p {
+      font-size: 1.2rem;
     }
     section {
-      padding: 2rem;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
+      padding: 2rem;
     }
     h2 {
-      color: #d4af37;
+      color: #b58e2f;
+      margin-bottom: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border: 3px solid #d4af37;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
     }
     footer {
       background-color: #333;
@@ -42,12 +56,7 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -58,33 +67,30 @@
     <p>Güven, Kalite ve Zarafetin Buluşma Noktası</p>
   </header>
 
-  <nav>
-    <a href="#hakkimizda">Hakkımızda</a>
-    <a href="#urunler">Ürünlerimiz</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
-
-  <section id="hakkimizda">
+  <section>
     <h2>Hakkımızda</h2>
-    <p>Genişler Kuyumculuk, yılların tecrübesiyle müşterilerine en kaliteli ve güvenilir altın, pırlanta ve takı ürünlerini sunar. 
-    Zarafeti ve şıklığı bir arada arayanlar için eşsiz tasarımlar sunuyoruz.</p>
+    <p>
+      Genişler Kuyumculuk, yılların deneyimiyle müşterilerine güvenilir ve zarif takılar sunar.
+      Altın, pırlanta ve özel tasarımlar konusunda uzman ekibimizle hizmet vermekteyiz.
+    </p>
   </section>
 
-  <section id="urunler">
-    <h2>Ürünlerimiz</h2>
-    <ul>
-      <li>Altın bilezikler</li>
-      <li>Pırlanta yüzükler</li>
-      <li>Set takımlar</li>
-      <li>Özel tasarım kolyeler</li>
-    </ul>
-    <p>Tüm ürünlerimiz hakkında detaylı bilgi için mağazamızı ziyaret edebilirsiniz.</p>
+  <section>
+    <h2>Ürün Galerisi</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1600180758890-bba01f6e6bff?auto=format&fit=crop&w=800&q=80" alt="Altın Bilezik">
+      <img src="https://images.unsplash.com/photo-1622448593651-7b3f6817bcb1?auto=format&fit=crop&w=800&q=80" alt="Pırlanta Yüzük">
+      <img src="https://images.unsplash.com/photo-1611688821246-fc5b438aa72d?auto=format&fit=crop&w=800&q=80" alt="Takı Seti">
+      <img src="https://images.unsplash.com/photo-1630407180437-3b5958cfdffd?auto=format&fit=crop&w=800&q=80" alt="Altın Kolye">
+      <img src="https://images.unsplash.com/photo-1589927986089-35812386b013?auto=format&fit=crop&w=800&q=80" alt="Altın Takı">
+      <img src="https://images.unsplash.com/photo-1599940824395-9b6f58d9c007?auto=format&fit=crop&w=800&q=80" alt="Yüzük Kutusu">
+    </div>
   </section>
 
-  <section id="iletisim">
+  <section>
     <h2>İletişim</h2>
-    <p><strong>Adres:</strong> Genişler Kuyumculuk, [Adresinizi buraya yazın]</p>
-    <p><strong>Telefon:</strong> 0 (XXX) XXX XX XX</p>
+    <p><strong>Adres:</strong> Genişler Kuyumculuk, [Tam adres buraya]</p>
+    <p><strong>Telefon:</strong> 0 (5XX) XXX XX XX</p>
     <p><strong>E-posta:</strong> info@genislerkuyumculuk.com</p>
     <p>Bizi ziyaret etmekten memnuniyet duyarız!</p>
   </section>
