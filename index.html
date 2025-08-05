@@ -1,164 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        .bg-yellow{
-            background-color: #FFF78A;
-        }
-        .text-orange{
-            color: #FFAD84;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genişler Kuyumculuk</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background-color: #d4af37;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #333;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #d4af37;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="main-menu bg-yellow">
-        <h1 class="text-center p-3 fw-bold ">İSİMSİZ <span class="text-orange">KUYUMCULUK</span> </h1>
-    </div>
-    <table class="table table-success">
-        <thead>
-          <tr>
-            <th scope="col">DÖVİZ TÜRÜ</th>
-            <th scope="col">ALIŞ</th>
-            <th scope="col">SATIŞ </th>
-            <th scope="col">DEĞİŞİM</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">USD</th>
-            <td id="usd-buying"></td>
-            <td id="usd-selling"></td>
-            <td id="usd-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">HAMIT ALTIN</th>
-            <td id="ham-buying"></td>
-            <td id="ham-selling"></td>
-            <td id="ham-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">RESAT ALTIN</th>
-            <td id="res-buying"></td>
-            <td id="res-selling"></td>
-            <td id="res-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">GREMSE ALTIN</th>
-            <td id="gre-buying"></td>
-            <td id="gre-selling"></td>
-            <td id="gre-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">GRAM ALTIN</th>
-            <td id="GRA-buying"></td>
-            <td id="GRA-selling"></td>
-            <td id="GRA-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">ÇEYREK ALTIN</th>
-            <td id="CEY-buying"></td>
-            <td id="CEY-selling"></td>
-            <td id="CEY-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">YARIM ALTIN</th>
-            <td id="YAR-buying"></td>
-            <td id="YAR-selling"></td>
-            <td id="YAR-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">TAM ALTIN</th>
-            <td id="TAM-buying"></td>
-            <td id="TAM-selling"></td>
-            <td id="TAM-change"></td>
-          </tr>
-          <tr>
-            <th scope="row">CUMHURİYET ALTIN</th>
-            <td id="CUM-buying"></td>
-            <td id="CUM-selling"></td>
-            <td id="CUM-change"></td>
-          </tr>
-        </tbody>
-      </table>
-    <script>
-        async function getExchange() {
-            try {
-                const response = await fetch('https://finans.truncgil.com/v4/today.json');
 
-                if (!response.ok) {
-                    throw new Error("API ERİŞİMİ YOK ");
-                } else {
-                    const data = await response.json();
-                    console.log(data.USD.Buying);
-                    //USD
-                    document.getElementById('usd-buying').textContent = data.USD.Buying;
-                    document.getElementById('usd-selling').textContent = data.USD.Selling;
-                    document.getElementById('usd-change').textContent = data.USD.Change;
-                    //
+  <header>
+    <h1>Genişler Kuyumculuk</h1>
+    <p>Güven, Kalite ve Zarafetin Buluşma Noktası</p>
+  </header>
 
-                    //HAMIT_ALTIN
-                    document.getElementById('ham-buying').textContent = data.HAM.Buying;
-                    document.getElementById('ham-selling').textContent = data.HAM.Selling;
-                    document.getElementById('ham-change').textContent = data.HAM.Change;
+  <nav>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#urunler">Ürünlerimiz</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
 
-                    //RESAT ALTIN
-                    document.getElementById('res-buying').textContent = data.RES.Buying;
-                    document.getElementById('res-selling').textContent = data.RES.Selling;
-                    document.getElementById('res-change').textContent = data.RES.Change;
+  <section id="hakkimizda">
+    <h2>Hakkımızda</h2>
+    <p>Genişler Kuyumculuk, yılların tecrübesiyle müşterilerine en kaliteli ve güvenilir altın, pırlanta ve takı ürünlerini sunar. 
+    Zarafeti ve şıklığı bir arada arayanlar için eşsiz tasarımlar sunuyoruz.</p>
+  </section>
 
-                    
-                    //GREMSE ALTIN
-                    document.getElementById('gre-buying').textContent = data.GRE.Buying;
-                    document.getElementById('gre-selling').textContent = data.GRE.Selling;
-                    document.getElementById('gre-change').textContent = data.GRE.Change;
+  <section id="urunler">
+    <h2>Ürünlerimiz</h2>
+    <ul>
+      <li>Altın bilezikler</li>
+      <li>Pırlanta yüzükler</li>
+      <li>Set takımlar</li>
+      <li>Özel tasarım kolyeler</li>
+    </ul>
+    <p>Tüm ürünlerimiz hakkında detaylı bilgi için mağazamızı ziyaret edebilirsiniz.</p>
+  </section>
 
-                    //GRAM ALTIN
-                    document.getElementById('GRA-buying').textContent = data.GRA.Buying;
-                    document.getElementById('GRA-selling').textContent = data.GRA.Selling;
-                    document.getElementById('GRA-change').textContent = data.GRA.Change;
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p><strong>Adres:</strong> Genişler Kuyumculuk, [Adresinizi buraya yazın]</p>
+    <p><strong>Telefon:</strong> 0 (XXX) XXX XX XX</p>
+    <p><strong>E-posta:</strong> info@genislerkuyumculuk.com</p>
+    <p>Bizi ziyaret etmekten memnuniyet duyarız!</p>
+  </section>
 
-                    
-                    //CEYREK ALTIN
-                    document.getElementById('CEY-buying').textContent = data.CEY.Buying;
-                    document.getElementById('CEY-selling').textContent = data.CEY.Selling;
-                    document.getElementById('CEY-change').textContent = data.CEY.Change;
+  <footer>
+    &copy; 2025 Genişler Kuyumculuk. Tüm hakları saklıdır.
+  </footer>
 
-                                        
-                    //YARIM  ALTIN
-                    document.getElementById('YAR-buying').textContent = data.YAR.Buying;
-                    document.getElementById('YAR-selling').textContent = data.YAR.Selling;
-                    document.getElementById('YAR-change').textContent = data.YAR.Change;
-
-                    //TAM  ALTIN
-                    document.getElementById('TAM-buying').textContent = data.TAM.Buying;
-                    document.getElementById('TAM-selling').textContent = data.TAM.Selling;
-                    document.getElementById('TAM-change').textContent = data.TAM.Change;
-
-                    //TAM  ALTIN
-                    document.getElementById('CUM-buying').textContent = data.CUM.Buying;
-                    document.getElementById('CUM-selling').textContent = data.CUM.Selling;
-                    document.getElementById('CUM-change').textContent = data.CUM.Change;
-
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        window.onload = function () {
-            getExchange();
-
-            setInterval(function () {
-                getExchange();
-            }, 5000); 
-        };
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
