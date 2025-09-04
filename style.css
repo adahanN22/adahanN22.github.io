@@ -1,0 +1,315 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #EAEAEA;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.spacer{
+    flex-grow:1;
+}
+.header{
+    background: linear-gradient(360deg, #343434 0%, #565656 100%);
+}
+.content{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-content: space-between;
+    flex-grow: 1
+}
+.logo{
+    max-height: 90px;
+    padding: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.iconbtn{
+    background-color: #FDBA28;
+    color: #343434;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.iconbtn:hover{
+    background-color: #f5f5f5;
+}
+.iconbtn span{
+    color: #565656;
+}
+.navbar{
+    background-color: #FDBA28;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.nav-link{
+    color: #565656;
+}
+.nav-link.active{
+    color: #303030;
+    font-weight: 600;
+}
+.dbox{
+    background: linear-gradient(90.73deg, #565656 0%, #343434 101.07%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #f5f5f5;
+    border: none;
+    overflow: hidden;
+}
+.dbox-title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #FDBA28;
+    text-shadow: 0px 0px 3px #000000;
+}
+.dbox-text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: center;
+    color: #F5F5F5;
+}
+.social-icons{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.social-icons li{
+    float: left;
+    font-size: 45px;
+}
+.social-icons li a{
+    color: #f5f5f5;
+    text-decoration: none;
+}
+.social-icons li a:hover{
+    color: #FDBA28;
+}
+thead th,tr{
+    border-bottom: 1px solid rgba(253, 186, 40,0.65)!important;
+}
+tr:hover{
+    background-color: rgba(255, 255, 255,0.25); 
+}
+.table{
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+.table>:not(caption)>*>* {
+    color: rgba(255, 255, 255,0.75);
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+}
+table thead{
+
+    border-bottom: 2px solid rgba(253, 186, 40,0.50);
+}
+table th{
+    text-align: left;
+}
+table td{
+    text-align: left;
+}
+.satir{
+    background-color: rgba(242, 242, 242,0.1);
+    box-shadow: 0px 0px 5px rgba(20,20,20,0.54);
+    border-radius: 15px;
+}
+.satir th{
+    color: #FDBA28;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+    text-shadow: 0px 0px 3px #000000;
+}
+.satir td{
+    color: #F2F2F2;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 0px 0px 3px #000000;
+    padding-top: 15px;
+}
+
+.satir p{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    color: #F2F2F2;
+}
+.fa-chevron-up{
+    color: #33AC09;
+}
+.fa-chevron-down{
+    color: #DF0606;
+}
+.fa-chevron-right{
+    color: rgba(255, 255, 255,0.55); 
+}
+td:first-child,
+th:first-child {
+  border-radius: 15px 0 0 15px;
+  padding-left: 20px;
+}
+td:last-child,
+th:last-child {
+  border-radius: 0 15px 15px 0;
+}
+.tarih{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+}
+
+.hbox{
+    background: #F5F5F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #303030;
+    border: none;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.hbox-text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    color: #303030;
+}
+.hbox-title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    color: #000000;
+}
+
+.textbtn{
+    background-color: #FDBA28;
+    color: #343434;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.textbtn:hover{
+    background-color: #f5f5f5;
+    color: #343434;
+}
+.legal{
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(86, 86, 86, 0.75);
+}
+.hbox img{
+    height: 100%;
+    object-fit: cover;
+}
+.footer{
+    background: linear-gradient(180deg, #565656 0%, #000000 100%);
+}
+.ftr-text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.footer a{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;   
+    color: #FFFFFF;
+}
+.footer a.active{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;   
+    color: #FDBA28!important;
+}
+
+.ftr-iltsm li a i{
+    color: #FDBA28;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+.footer a:hover{
+    color:#FDBA28;
+}
+.pageimg{
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    overflow: hidden;
+ 
+}
+.pgimg{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+.iltsm i{
+
+    font-size: 20px;
+}
+.iltsm a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+.iltsm a:hover{
+    color:#86600c;
+}
+.hizmetimg{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.hizmet-title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: #FDBA28;
+    text-shadow: 0px 0px 3px #000000;
+}
+.hizbox{
+    background-color: rgba(48, 48, 48, 0.35);
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+}
+.hizmet a{
+    text-decoration: none;
+}
+.hizbox:hover{
+    background-color: rgba(48, 48, 48, 0.75);
+}
