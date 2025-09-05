@@ -283,3 +283,7 @@ footer {
 		background-position: 0% 50%;
 	}
 }
+
+body {
+  padding-top: 70px; /* menünün yüksekliği kadar boşluk bırakır */
+}
