@@ -1,44 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <title>Genişler Kuyumculuk - Tokat/Turhal Altın Fiyatları</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="index.html"/>
-    <meta name="description" content="Genişler Kuyumculuk; Tokat/Turhal'da en güncel altın fiyatlarına ulaşın."/>
+    <title>Genişler Kuyumculuk - Tokat/Turhal Altın Fiyatları</title>
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600&family=Poppins:ital,wght@0,300;0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"  />
-    <link rel="stylesheet" type="text/css" href="css/style17d3.css?v=1.0.19" />
-
-    <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/converterf700.js?v=1.0.1"></script>
-    <script type="text/javascript" src="js/main2c70.js?v=1.0.3"></script>
-
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" />
+    <!-- Özel CSS -->
+    <link rel="stylesheet" href="css/style17d3.css?v=1.0.19" />
     <style>
-        /* Tabloların mobilde yatay kaydırması için */
-        .table-responsive {
+        /* Responsive tablolar için */
+        .table100 {
             width: 100%;
             overflow-x: auto;
         }
-        /* Header logo ve navbar düzenlemeleri */
-        header .logo {
-            max-width: 100%;
-            height: auto;
+        .converter-input {
+            width: 100%;
         }
-        /* Footer yazısının taşmaması için */
-        footer p {
-            word-wrap: break-word;
-        }
-        /* Küçük ekranlarda tablo font boyutunu küçültme */
-        @media (max-width: 767px) {
-            .pricefont {
-                font-size: 12px;
+        @media (max-width: 768px) {
+            header .navbar-nav {
+                text-align: center;
+            }
+            .table100 table {
+                font-size: 14px;
             }
         }
     </style>
@@ -52,15 +44,15 @@
                         <img src="images/logo.png" alt="Genişler Kuyumculuk" class="logo" />
                     </a>
                 </div>
-                <div class="col-6 col-md-9 text-md-right">
-                    <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="col-6 col-md-9 text-right">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto">
+                            <ul class="navbar-nav ml-auto" style="right:0px;">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Altın Fiyatları <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="index.html">Altın Fiyatları</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#about">Hakkımızda</a>
@@ -78,59 +70,165 @@
             </div>
         </div>
     </header>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="table-responsive">
-                        <div class="table100 ver1 m-b-110">
-                            <table data-vertable="ver1">
-                                <!-- Güncel Altın Fiyatları tablosu buraya gelecek (mevcut içerik değişmedi) -->
-                            </table>
-                        </div>
-                    </div>
 
-                    <div class="table-responsive">
-                        <div class="table100 ver1 m-b-110">
-                            <table data-vertable="ver1">
-                                <!-- 22 Ayar Altın Fiyatları tablosu buraya gelecek -->
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="table-responsive" style="margin-top:20px;">
-                        <div class="table100 ver1 m-b-110">
-                            <table data-vertable="ver1">
-                                <!-- 24 Ayar Altın Fiyatları tablosu buraya gelecek -->
-                            </table>
-                        </div>
-                    </div>
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Güncel Altın Fiyatları Tablosu -->
+                <div class="table100 ver1 mb-4">
+                    <table data-vertable="ver1">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="column100 pricefont column1" colspan="4">Güncel Altın Fiyatları</th>
+                            </tr>
+                            <tr class="row100 head">
+                                <th class="column100 pricefont column1">Sembol</th>
+                                <th class="column100 pricefont column2">Satış</th>
+                                <th class="column100 pricefont column3">Geri Alış</th>
+                                <th class="column100 pricefont column4">Takas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row100">
+                                <td class="column100" data-column="column1">22 AYAR (BİLEZİK)</td>
+                                <td class="column100" data-column="column2" id="yirmiiki_ayar_bilezik-alis">4.600</td>
+                                <td class="column100" data-column="column3" id="yirmiiki_ayar_bilezik-satis">4.275</td>
+                                <td class="column100" data-column="column4" id="yirmiiki_ayar_bilezik-takas">4.400</td>
+                            </tr>
+                            <!-- Diğer altın fiyatları aynı şekilde eklenir -->
+                        </tbody>
+                    </table>
                 </div>
 
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2 class="card-title">Altın Çevirici</h2>
-                        </div>
-                        <div class="card-body p-0">
-                            <table class="table">
-                                <!-- Altın çevirici tabloları aynı şekilde korunuyor -->
-                            </table>
-                        </div>
+                <!-- 22 Ayar Altın Tablosu -->
+                <div class="table100 ver1 mb-4">
+                    <table data-vertable="ver1">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="column100 pricefont column1" colspan="3">22 Ayar Altın Fiyatları</th>
+                            </tr>
+                            <tr class="row100 head">
+                                <th class="column100 pricefont column1">Sembol</th>
+                                <th class="column100 pricefont column2">Satış</th>
+                                <th class="column100 pricefont column3">Geri Alış</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row100">
+                                <td class="column100" data-column="column1">0.25 GRAM</td>
+                                <td class="column100" id="yirmiiki_ayar_025-alis">1.170</td>
+                                <td class="column100" id="yirmiiki_ayar_025-satis">1.065</td>
+                            </tr>
+                            <!-- Diğerleri eklenir -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 24 Ayar Altın Tablosu -->
+                <div class="table100 ver1 mb-4">
+                    <table data-vertable="ver1">
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="column100 pricefont column1" colspan="3">24 Ayar Altın Fiyatları</th>
+                            </tr>
+                            <tr class="row100 head">
+                                <th class="column100 column1">Sembol</th>
+                                <th class="column100 column2">Satış</th>
+                                <th class="column100 column3">Geri Alış</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row100">
+                                <td class="column100" data-column="column1">0.50 GRAM</td>
+                                <td class="column100" id="yirmidort_ayar_050-alis">2.440</td>
+                                <td class="column100" id="yirmidort_ayar_050-satis">2.330</td>
+                            </tr>
+                            <!-- Diğerleri eklenir -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- Altın Çevirici -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h2 class="card-title">Altın Çevirici</h2>
+                    </div>
+                    <div class="card-body p-2">
+                        <table class="table table-sm">
+                            <tr>
+                                <td>Türk Lirası</td>
+                                <td><input class="converter-input form-control" type="text" data-type="gold" data-selling="1"></td>
+                            </tr>
+                            <tr>
+                                <td>22 AYAR (BİLEZİK)</td>
+                                <td><input class="converter-input form-control" type="text" data-type="gold" data-selling="4600"></td>
+                            </tr>
+                            <!-- Diğerleri aynı şekilde eklenir -->
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
+
+    <footer class="mt-4">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <p><strong>YASAL UYARI:</strong> Burada yer alan haberler ve Tokat/Turhal altın fiyatları bilgi amaçlıdır. Yayınlanan Tokat/Turhal altın fiyatları yatırım danışmanlığı kapsamında değildir</p>
-                    <p class="text-center">&copy; Genişler Kuyumculuk | Tüm Hakları Saklıdır... Adahan Aygün tarafından tasarlanmış ve hazırlanmıştır.</p>
+                <div class="col-12 text-center">
+                    <strong>YASAL UYARI:</strong> Burada yer alan haberler ve Tokat/Turhal altın fiyatları bilgi amaçlıdır. Yayınlanan Tokat/Turhal altın fiyatları yatırım danışmanlığı kapsamında değildir.
+                    <p>&copy; Genişler Kuyumculuk | Tüm Hakları Saklıdır... Adahan Aygün tarafından tasarlanmış ve hazırlanmıştır.</p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modallar -->
+    <div class="modal fade" id="about" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Hakkımızda</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Tokat/Turhal'da kuyumculuk sektöründe 35 yıllık bir birikim ve deneyimle...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">İletişim</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Adres:</strong> Yavuz Selim Mahallesi, Menderes Cd. NO:29, 60300 Tokat/Turhal</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@genislerkuyumculuk.com.tr">info@genislerkuyumculuk.com.tr</a></p>
+                    <p><strong>Telefon:</strong> <a href="tel:????">???</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+    <script src="js/converterf700.js?v=1.0.1"></script>
+    <script src="js/main2c70.js?v=1.0.3"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js"></script>
+    <script>
+        // Socket ve converter JS kodları buraya gelecek (senin attığın şekilde)
+    </script>
 </body>
 </html>
