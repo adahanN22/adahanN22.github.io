@@ -8,61 +8,83 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png" />
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600&family=Poppins:ital,wght@0,300;0,400;0,900;1,700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" />
+    <!-- Font Awesome & Bootstrap -->
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style17d3.css?v=1.0.19" />
 
-    <style>
-        /* Mobil hamburger menüyü kaldır, menü direkt üstte */
-        .navbar-toggler { display: none; }
-        .navbar-nav { flex-direction: row; }
-        .nav-item { margin-left: 20px; }
-        .converter-input { width: 100%; margin-bottom: 10px; }
-        @media (max-width: 768px) {
-            .nav-item { margin-left: 10px; }
-        }
-    </style>
-
-    <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="../cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
     <script src="js/converterf700.js?v=1.0.1"></script>
     <script src="js/main2c70.js?v=1.0.3"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JG6Z30XQJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4JG6Z30XQJ');
+    </script>
+
+    <style>
+        /* Header düzenleme mobil ve desktop */
+        header .container {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        header nav ul li a:hover {
+            color: #ffbf00;
+        }
+        @media (max-width: 768px){
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
+
 <header>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-3">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Genişler Kuyumculuk" class="logo" />
-                </a>
-            </div>
-            <div class="col-md-9 text-right">
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="collapse navbar-collapse show">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active"><a class="nav-link" href="index.html">Altın Fiyatları</a></li>
-                            <li class="nav-item"><a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#about">Hakkımızda</a></li>
-                            <li class="nav-item"><a class="nav-link" href="javascript:;" data-toggle="modal" data-target="#contact">İletişim</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/omer_geniss/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+    <div class="container d-flex justify-content-between align-items-center py-2">
+        <div>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Genişler Kuyumculuk" style="height: 50px;">
+            </a>
         </div>
+        <nav>
+            <ul class="d-flex list-unstyled mb-0">
+                <li class="mr-3"><a href="index.html">Altın Fiyatları</a></li>
+                <li class="mr-3"><a href="javascript:;" data-toggle="modal" data-target="#about">Hakkımızda</a></li>
+                <li class="mr-3"><a href="javascript:;" data-toggle="modal" data-target="#contact">İletişim</a></li>
+                <li><a href="https://www.instagram.com/omer_geniss/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+        </nav>
     </div>
 </header>
 
 <main>
-    <div class="container mt-4">
-        <div class="row">
+    <div class="container">
+        <!-- Altın Fiyatları Tablosu -->
+        <div class="row mt-4">
             <div class="col-md-8">
-                <!-- Güncel Altın Fiyatları Tablosu -->
+                <!-- Güncel Altın Fiyatları -->
                 <div class="table100 ver1 m-b-110">
                     <table data-vertable="ver1">
                         <thead>
@@ -77,23 +99,83 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>22 AYAR (BİLEZİK)</td><td id="yirmiiki_ayar_bilezik-alis">4.600</td><td id="yirmiiki_ayar_bilezik-satis">4.275</td><td id="yirmiiki_ayar_bilezik-takas">4.400</td></tr>
-                            <tr><td>18 AYAR (ZİNCİR)</td><td id="onsekiz_ayar_zincir-alis">4.345</td><td id="onsekiz_ayar_zincir-satis">3.290</td><td id="onsekiz_ayar_zincir-takas">3.340</td></tr>
-                            <tr><td>ATA LİRA</td><td id="ata_lira-alis">31.600</td><td id="ata_lira-satis">31.000</td><td id="ata_lira-takas">31.200</td></tr>
-                            <tr><td>OSMANLI</td><td id="osmanli-alis">31.600</td><td id="osmanli-satis">30.800</td><td id="osmanli-takas">31.000</td></tr>
-                            <tr><td>ÇEYREK ALTIN</td><td id="ceyrek_altin_eski-alis">7.800</td><td id="ceyrek_altin_eski-satis">7.500</td><td id="ceyrek_altin_eski-takas">7.650</td></tr>
-                            <tr><td>YARIM ALTIN</td><td id="yarim_altin_eski-alis">15.600</td><td id="yarim_altin_eski-satis">15.000</td><td id="yarim_altin_eski-takas">15.300</td></tr>
-                            <tr><td>ZİYNET LİRA</td><td id="ziynet_lira_eski-alis">31.200</td><td id="ziynet_lira_eski-satis">30.000</td><td id="ziynet_lira_eski-takas">30.600</td></tr>
-                            <tr><td>GRAMİSE</td><td id="gramise_eski-alis">77.700</td><td id="gramise_eski-satis">75.200</td><td id="gramise_eski-takas">76.700</td></tr>
-                            <tr><td>HAMİT BEŞLİ</td><td id="hamit_besli-alis">162.500</td><td id="hamit_besli-satis">158.500</td><td id="hamit_besli-takas">-</td></tr>
-                            <tr><td>14 AYAR HURDA</td><td id="ondort_ayar_hurda-alis">-</td><td id="ondort_ayar_hurda-satis">2.630</td><td id="ondort_ayar_hurda-takas">2.680</td></tr>
-                            <tr><td>HAS 995</td><td id="has_995-alis">-</td><td id="has_995-satis">4.670</td><td id="has_995-takas">-</td></tr>
-                            <tr><td>YARIM ÇEYREK</td><td id="yarim_ceyrek-alis">2.800</td><td id="yarim_ceyrek-satis">2.650</td><td id="yarim_ceyrek-takas">-</td></tr>
+                            <tr class="row100">
+                                <td>22 AYAR (BİLEZİK)</td>
+                                <td id="yirmiiki_ayar_bilezik-alis">4.600</td>
+                                <td id="yirmiiki_ayar_bilezik-satis">4.275</td>
+                                <td id="yirmiiki_ayar_bilezik-takas">4.400</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>18 AYAR (ZİNCİR)</td>
+                                <td id="onsekiz_ayar_zincir-alis">4.345</td>
+                                <td id="onsekiz_ayar_zincir-satis">3.290</td>
+                                <td id="onsekiz_ayar_zincir-takas">3.340</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>ATA LİRA</td>
+                                <td id="ata_lira-alis">31.600</td>
+                                <td id="ata_lira-satis">31.000</td>
+                                <td id="ata_lira-takas">31.200</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>OSMANLI</td>
+                                <td id="osmanli-alis">31.600</td>
+                                <td id="osmanli-satis">30.800</td>
+                                <td id="osmanli-takas">31.000</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>ÇEYREK ALTIN</td>
+                                <td id="ceyrek_altin_eski-alis">7.800</td>
+                                <td id="ceyrek_altin_eski-satis">7.500</td>
+                                <td id="ceyrek_altin_eski-takas">7.650</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>YARIM ALTIN</td>
+                                <td id="yarim_altin_eski-alis">15.600</td>
+                                <td id="yarim_altin_eski-satis">15.000</td>
+                                <td id="yarim_altin_eski-takas">15.300</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>ZİYNET LİRA</td>
+                                <td id="ziynet_lira_eski-alis">31.200</td>
+                                <td id="ziynet_lira_eski-satis">30.000</td>
+                                <td id="ziynet_lira_eski-takas">30.600</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>GRAMİSE</td>
+                                <td id="gramise_eski-alis">77.700</td>
+                                <td id="gramise_eski-satis">75.200</td>
+                                <td id="gramise_eski-takas">76.700</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>HAMİT BEŞLİ</td>
+                                <td id="hamit_besli-alis">162.500</td>
+                                <td id="hamit_besli-satis">158.500</td>
+                                <td id="hamit_besli-takas">-</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>14 AYAR HURDA</td>
+                                <td id="ondort_ayar_hurda-alis">-</td>
+                                <td id="ondort_ayar_hurda-satis">2.630</td>
+                                <td id="ondort_ayar_hurda-takas">2.680</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>HAS 995</td>
+                                <td id="has_995-alis">-</td>
+                                <td id="has_995-satis">4.670</td>
+                                <td id="has_995-takas">-</td>
+                            </tr>
+                            <tr class="row100">
+                                <td>YARIM ÇEYREK</td>
+                                <td id="yarim_ceyrek-alis">2.800</td>
+                                <td id="yarim_ceyrek-satis">2.650</td>
+                                <td id="yarim_ceyrek-takas">-</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <!-- 22 Ayar Altın Fiyatları Tablosu -->
+                <!-- 22 Ayar Altın -->
                 <div class="table100 ver1 m-b-110">
                     <table data-vertable="ver1">
                         <thead>
@@ -107,14 +189,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>0.25 GRAM</td><td id="yirmiiki_ayar_025-alis">1.170</td><td id="yirmiiki_ayar_025-satis">1.065</td></tr>
-                            <tr><td>0.50 GRAM</td><td id="yirmiiki_ayar_050-alis">2.250</td><td id="yirmiiki_ayar_050-satis">2.130</td></tr>
-                            <tr><td>1 GRAM</td><td id="yirmiiki_ayar-alis">4.470</td><td id="yirmiiki_ayar-satis">4.260</td></tr>
+                            <tr>
+                                <td>0.25 GRAM</td>
+                                <td id="yirmiiki_ayar_025-alis">1.170</td>
+                                <td id="yirmiiki_ayar_025-satis">1.065</td>
+                            </tr>
+                            <tr>
+                                <td>0.50 GRAM</td>
+                                <td id="yirmiiki_ayar_050-alis">2.250</td>
+                                <td id="yirmiiki_ayar_050-satis">2.130</td>
+                            </tr>
+                            <tr>
+                                <td>1 GRAM</td>
+                                <td id="yirmiiki_ayar-alis">4.470</td>
+                                <td id="yirmiiki_ayar-satis">4.260</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <!-- 24 Ayar Altın Fiyatları Tablosu -->
+                <!-- 24 Ayar Altın -->
                 <div class="table100 ver1 m-b-110">
                     <table data-vertable="ver1">
                         <thead>
@@ -137,30 +231,14 @@
                         </tbody>
                     </table>
                 </div>
+
             </div>
 
             <!-- Altın Çevirici -->
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header"><h2 class="card-title">Altın Çevirici</h2></div>
-                    <div class="card-body">
-                        <table class="table">
-                            <tbody>
-                                <tr><td>Türk Lirası</td><td><input class="converter-input form-control" data-index="0" data-type="gold" type="text" data-selling="1"></td></tr>
-                                <tr><td>22 AYAR (BİLEZİK)</td><td><input class="converter-input form-control" data-index="1" data-type="gold" data-selling="4600"></td></tr>
-                                <tr><td>18 AYAR (ZİNCİR)</td><td><input class="converter-input form-control" data-index="2" data-type="gold" data-selling="4345"></td></tr>
-                                <tr><td>ATA LİRA</td><td><input class="converter-input form-control" data-index="3" data-type="gold" data-selling="31600"></td></tr>
-                                <tr><td>OSMANLI</td><td><input class="converter-input form-control" data-index="4" data-type="gold" data-selling="31600"></td></tr>
-                                <tr><td>ÇEYREK ALTIN</td><td><input class="converter-input form-control" data-index="5" data-type="gold" data-selling="7800"></td></tr>
-                                <tr><td>YARIM ALTIN</td><td><input class="converter-input form-control" data-index="6" data-type="gold" data-selling="15600"></td></tr>
-                                <tr><td>ZİYNET LİRA</td><td><input class="converter-input form-control" data-index="7" data-type="gold" data-selling="31200"></td></tr>
-                                <tr><td>GRAMİSE</td><td><input class="converter-input form-control" data-index="8" data-type="gold" data-selling="77700"></td></tr>
-                                <tr><td>HAMİT BEŞLİ</td><td><input class="converter-input form-control" data-index="9" data-type="gold" data-selling="162500"></td></tr>
-                                <tr><td>14 AYAR HURDA</td><td><input class="converter-input form-control" data-index="10" data-type="gold" data-selling="0"></td></tr>
-                                <tr><td>HAS 995</td><td><input class="converter-input form-control" data-index="11" data-type="gold" data-selling="0"></td></tr>
-                                <tr><td>YARIM ÇEYREK</td><td><input class="converter-input form-control" data-index="12" data-type="gold" data-selling="2800"></td></tr>
-                                <tr><td>22 AYAR 0.25 GRAM</td><td><input class="converter-input form-control" data-index="13" data-type="gold" data-selling="1170"></td></tr>
-                                <tr><td>22 AYAR 0.50 GRAM</td><td><input class="converter-input form-control" data-index="14" data-type="gold" data-selling="2250"></td></tr>
-                                <tr><td>22 AYAR 1 GRAM</td><td><input class="converter-input form-control" data-index="15" data-type="gold" data-selling="4470"></td></tr>
-                                <tr><td>24 AYAR 0.50 GRAM</td><td><input class="converter-input form-control" data-index="16" data-type="gold" data-selling="2440"></td></tr>
-                                <tr><
+                    <div class="card-header">
+                        <h2 class="card-title">Altın Çevirici</h2>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-bordered mb
