@@ -287,3 +287,25 @@ footer {
 body {
   padding-top: 70px; /* menünün yüksekliği kadar boşluk bırakır */
 }
+
+.navbar-collapse {
+    display: flex !important;  /* Her zaman görünür */
+    flex-direction: row !important; /* Menü elemanlarını yatay yap */
+}
+
+.navbar-toggler {
+    display: none;  /* Hamburger butonunu gizle */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+body {
+    padding-top: 70px; /* Navbar yüksekliğine göre ayarla */
+}
+
