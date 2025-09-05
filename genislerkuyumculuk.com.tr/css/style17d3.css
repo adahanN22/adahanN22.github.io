@@ -1,6 +1,6 @@
-/* ----------------------
-   RESET & TEMEL STİLLER
------------------------ */
+/* --------------------------
+   Reset ve Temel Ayarlar
+--------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,113 +14,133 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-    display: block;
+	display: block;
 }
+
 body {
-    line-height: 1;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size:16px;
-    background-image: url("../images/dark-bg.jpg");
-    background-attachment: fixed;
-    height: 100vh;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size:16px;
+	background-image: url("../images/dark-bg.jpg");
+	background-attachment: fixed;
+	height: 100vh;
+	line-height: 1;
 }
+
 ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
-blockquote:before, blockquote:after, q:before, q:after { content: ''; }
+blockquote:before, blockquote:after, q:before, q:after { content: none; }
 table { border-collapse: collapse; border-spacing: 0; }
 
-/* ----------------------
-   HEADER / NAVBAR
------------------------ */
-header{
-    background-color:rgb(20, 26, 36);
-    position: fixed;
-    top:0;
-    width: 100%;
-    z-index:9999;
-    height: 130px;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.5rem;
+	font-family: inherit;
+	font-weight: 700;
+	line-height: 1.2;
+	color: inherit;
 }
+
+p{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
+/* --------------------------
+   Sabit Navbar
+--------------------------- */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 130px;
+	background-color: rgb(20, 26, 36);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
 header .logo{
-    height:95px;
-    width:auto;
-}
-.navbar-nav{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding-top:35px;
-}
-.nav-item { list-style: none; }
-.nav-link{
-    color:#fff;
-    text-decoration: none;
-    padding: 10px 15px;
-}
-.navbar-toggler { display: none !important; }
-
-/* ----------------------
-   MAIN & CONTENT
------------------------ */
-main{
-    width: 100%;
-    min-height: 100vh;
-    margin-top: 130px; /* Navbar yüksekliği kadar boşluk */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 33px 30px;
-    margin-bottom:80px;
-}
-.card{ margin-bottom:25px; height:150px; }
-table {
-    width: 100%;
-    background-color:#f5f5f5;
-    margin-bottom:15px;
-}
-th, td { padding: 10px; font-weight: unset; }
-
-/* ----------------------
-   FOOTER
------------------------ */
-footer {
-    width: 100%;
-    height: auto;
-    background-color:#161b24;
-    color:#fff;
-    font-size:13px;
-    margin-top:80px;
+	height:95px;
+	width:auto;
 }
 
-/* ----------------------
-   MODAL
------------------------ */
-.modal-header, .modal-footer { background-color:#1a1b18; color:#fff; }
-.modal-body { background-color:#32312e; color:#fff; }
-.modal-body p { line-height:2em; }
+header .navbar-collapse {
+	display: flex !important;
+	flex-direction: row !important;
+	justify-content: flex-end !important;
+	width: auto;
+	height: auto !important;
+	overflow: visible !important;
+}
 
-/* ----------------------
-   RESPONSIVE
------------------------ */
+.navbar-toggler {
+	display: none !important; /* Hamburger gizle */
+}
+
+header .navbar-nav {
+	display: flex !important;
+	flex-direction: row !important;
+	gap: 20px;
+}
+
+header .nav-link {
+	padding: 10px 15px !important;
+	color: #fff;
+	text-decoration: none;
+}
+
+header .nav-link:hover {
+	color: #ffd700;
+}
+
+/* --------------------------
+   İçerik üst boşluğu
+--------------------------- */
+main, .container {
+	padding-top: 130px; /* Navbar yüksekliğine göre */
+}
+
+/* --------------------------
+   Mobil Uyumluluk
+--------------------------- */
 @media (max-width: 991.98px) {
-    header .navbar-nav {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-    header .nav-link {
-        width: 100%;
-        padding: 12px 20px;
-    }
+	header {
+		flex-direction: column;
+		height: auto;
+		padding: 10px 20px;
+	}
+
+	header .navbar-collapse {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+		width: 100%;
+	}
+
+	header .navbar-nav {
+		flex-direction: column !important;
+		gap: 10px;
+		width: 100%;
+	}
+
+	header .nav-item {
+		width: 100%;
+	}
+
+	header .nav-link {
+		width: 100%;
+		padding: 12px 0 !important;
+	}
 }
