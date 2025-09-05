@@ -1,3 +1,6 @@
+/* --------------------------
+   Reset & Temel Stil
+--------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,337 +21,95 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-body{
-
-    font-family: 'Josefin Sans', sans-serif;
-    font-size:16px;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size:16px;
 	background-image: url("../images/dark-bg.jpg");
 	background-attachment: fixed;
-	/*
-	background: linear-gradient(-45deg, #000000, #676767, #414A4C, #2C3539);
-	background-size: 400% 400%;
-	animation: gradient 8s ease infinite;
-	*/
+	line-height: 1;
 	height: 100vh;
 }
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5rem;
-    font-family: inherit;
-    font-weight: 700;
-    line-height: 1.2;
-    color: inherit;
-}
-h1 { 
-    display: block;
-    font-size: 24px;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 700;
-}
-h2 {
-    display: block;
-    font-size: 22px;
-    margin-top: 0.83em;
-    margin-bottom: 0.83em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 700;
-}
-h3 { 
-    display: block;
-    font-size: 20px;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 700;
-}
-h4 { 
-    display: block;
-    font-size: 18px;
-    margin-top: 1.33em;
-    margin-bottom: 1.33em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 700;
-}
-h5 { 
-    display: block;
-    font-size: 16px;
-    margin-top: 1.67em;
-    margin-bottom: 1.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 700;
-}
-h6 { 
-    display: block;
-    font-size: 16px;
-    margin-top: 2.33em;
-    margin-bottom: 2.33em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: 700;
-}
-p{
-	padding-top:15px;
-	padding-bottom:15px;
-}
-header{
-	background-color:rgb(20, 26, 36);
-	height:auto;
-	padding-top:15px;
-	padding-bottom:15px;
-	position: fixed;
-    width: 100%;
-    height: 130px;
-	top:0;
-	z-index:999;
-}
+ol, ul { list-style: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+p { padding: 15px 0; }
 
-header .logo{
-	height:95px;
-	width:auto;
-}
-
-.navbar-nav{
-	padding-top:35px;
-}
-main{
-	width: 100%;
-    min-height: 100vh;
-	margin-top: 120px;
-
-	/*
-    background: -webkit-linear-gradient(45deg, #415ed0, #50c874);
-    background: -o-linear-gradient(45deg, #415ed0, #50c874);
-    background: -moz-linear-gradient(45deg, #415ed0, #50c874);
-    background: linear-gradient(45deg, #415ed0, #50c874);
-	background-size: 400% 400%;
-	animation: gradient 8s ease infinite;
-	*/
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 33px 30px;
-	margin-bottom:80px;
-
-}
-.card{
-	margin-bottom:25px;
-	height:150px;
-}
-table {
-    width: 100%;
-	background-color:#f5f5f5;
-	margin-bottom:15px;
-}
-
-th,
-td {
-    font-weight: unset;
-    padding-right: 10px
-}
-.pricefont{
-    font-family: 'Josefin Sans', sans-serif;
-}
-.column100 {
-    width: 130px;
-    padding-left: 25px
-}
-
-.column100.column1 {
-    width: 265px;
-    padding-left: 42px
-}
-
-.row100.head th {
-    padding-top: 24px;
-    padding-bottom: 20px
-}
-
-.row100 td {
-    padding-top: 18px;
-    padding-bottom: 14px
-}
-
-.table100.ver1 td {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px;
-    color: #000;
-	font-weight:600;
-    line-height: 1.4;
-	border-bottom:1px solid #ddd;
-}
-
-.table100.ver1 th {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 24px;
-    color: #fff;
-    line-height: 1.4;
-    text-transform: capitalize;
-	background-color:rgb(20, 26, 36);
-	font-weight:600;
-	border-bottom:1px solid #ddd;
-}
-
-.table100.ver1 .row100:hover {
-	background-color:rgb(20, 26, 36);
-    color: #fff;
-}
-
-.table100.ver1 .hov-column-ver1 {
-    background-color: rgb(242, 242, 242)
-}
-
-.table100.ver1 .hov-column-head-ver1 {
-	background-color:rgba(20, 26, 36);
-    color: #fff;
-}
-
-.table100.ver1 .row100:hover {
-	background-color:#232c3c;
-    color: #fff;
-}
-.table100.ver1 .row100:hover td {
-    color: #fff;
-}
-/*
-.table100.ver1 .row100 td:hover {
-	background-color:rgb(20, 26, 36);
-    color: #fff;
-}
-*/
-
-footer {
-	width: 100%;
-	height: auto;
-	background-color:#161b24;
-	color:#fff;
-	font-size:13px;
-	margin-top:80px;
-}
-/* Animations */
-.modal-header, .modal-footer {
-	background-color:#1a1b18;
-	color:#fff;
-}
-.modal-body {
-	background-color:#32312e;
-	color:#fff;
-	
-}
-.modal-body p {
-	line-height:2em;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 /* --------------------------
-   Navbar sabitleme ve düzeltme
+   Header / Navbar
 --------------------------- */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    background-color: #fff; /* İstersen burayı navbar rengine göre değiştir */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	background-color: rgb(20, 26, 36);
+	height: 130px;
+	display: flex;
+	align-items: center;
+	padding: 15px 30px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Navbar içeriğini her zaman göster */
-header .navbar-collapse {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-end !important;
-    height: auto !important;
-    overflow: visible !important;
+header .logo {
+	height: 95px;
+	width: auto;
+}
+
+/* Navbar menü */
+.navbar-nav {
+	display: flex !important;
+	flex-direction: row !important;
+	justify-content: flex-end !important;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+}
+
+.nav-item { width: auto; }
+.nav-link {
+	color: #fff;
+	padding: 10px 15px !important;
+	text-decoration: none;
 }
 
 /* Hamburger butonu gizle */
-.navbar-toggler {
-    display: none !important;
-}
+.navbar-toggler { display: none !important; }
 
-/* Menü linkleri */
-header .navbar-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 20px; /* Linkler arasına boşluk */
-}
-
-header .nav-link {
-    padding: 10px 15px !important;
-}
-
-/* İçerik üst boşluğu */
+/* --------------------------
+   Main / İçerik
+--------------------------- */
 main, .container {
-    padding-top: 80px; /* Navbar yüksekliğine göre ayarla */
+	padding-top: 150px; /* Navbar yüksekliği kadar boşluk */
 }
 
-/* Mobilde de aynı şekilde */
+/* --------------------------
+   Footer
+--------------------------- */
+footer {
+	width: 100%;
+	background-color:#161b24;
+	color:#fff;
+	font-size:13px;
+	padding: 20px 30px;
+}
+
+/* --------------------------
+   Mobil Uyumluluk
+--------------------------- */
 @media (max-width: 991.98px) {
-    header .navbar-collapse {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    header .navbar-nav {
-        flex-direction: column !important;
-        gap: 10px;
-        width: 100%;
-    }
-
-    header .nav-item {
-        width: 100%;
-    }
-
-    header .nav-link {
-        width: 100%;
-        padding: 12px 20px !important;
-    }
+	.navbar-nav {
+		flex-direction: column !important;
+		align-items: flex-start;
+		gap: 10px;
+		width: 100%;
+	}
+	.nav-item { width: 100%; }
+	.nav-link {
+		width: 100%;
+		padding: 12px 20px !important;
+	}
 }
-
-
