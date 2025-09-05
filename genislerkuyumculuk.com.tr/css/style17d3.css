@@ -1,6 +1,6 @@
-/* --------------------------
-   Reset & Temel Stil
---------------------------- */
+/* ----------------------
+   RESET & TEMEL STİLLER
+----------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14,102 +14,113 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	font-family: 'Josefin Sans', sans-serif;
-	font-size:16px;
-	background-image: url("../images/dark-bg.jpg");
-	background-attachment: fixed;
-	line-height: 1;
-	height: 100vh;
+    line-height: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size:16px;
+    background-image: url("../images/dark-bg.jpg");
+    background-attachment: fixed;
+    height: 100vh;
 }
 ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; }
 table { border-collapse: collapse; border-spacing: 0; }
-p { padding: 15px 0; }
 
-/* --------------------------
-   Header / Navbar
---------------------------- */
-header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 9999;
-	background-color: rgb(20, 26, 36);
-	height: 130px;
-	display: flex;
-	align-items: center;
-	padding: 15px 30px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ----------------------
+   HEADER / NAVBAR
+----------------------- */
+header{
+    background-color:rgb(20, 26, 36);
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index:9999;
+    height: 130px;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
-header .logo {
-	height: 95px;
-	width: auto;
+header .logo{
+    height:95px;
+    width:auto;
 }
-
-/* Navbar menü */
-.navbar-nav {
-	display: flex !important;
-	flex-direction: row !important;
-	justify-content: flex-end !important;
-	align-items: center;
-	gap: 20px;
-	width: 100%;
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-top:35px;
 }
-
-.nav-item { width: auto; }
-.nav-link {
-	color: #fff;
-	padding: 10px 15px !important;
-	text-decoration: none;
+.nav-item { list-style: none; }
+.nav-link{
+    color:#fff;
+    text-decoration: none;
+    padding: 10px 15px;
 }
-
-/* Hamburger butonu gizle */
 .navbar-toggler { display: none !important; }
 
-/* --------------------------
-   Main / İçerik
---------------------------- */
-main, .container {
-	padding-top: 150px; /* Navbar yüksekliği kadar boşluk */
+/* ----------------------
+   MAIN & CONTENT
+----------------------- */
+main{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 130px; /* Navbar yüksekliği kadar boşluk */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+    margin-bottom:80px;
 }
+.card{ margin-bottom:25px; height:150px; }
+table {
+    width: 100%;
+    background-color:#f5f5f5;
+    margin-bottom:15px;
+}
+th, td { padding: 10px; font-weight: unset; }
 
-/* --------------------------
-   Footer
---------------------------- */
+/* ----------------------
+   FOOTER
+----------------------- */
 footer {
-	width: 100%;
-	background-color:#161b24;
-	color:#fff;
-	font-size:13px;
-	padding: 20px 30px;
+    width: 100%;
+    height: auto;
+    background-color:#161b24;
+    color:#fff;
+    font-size:13px;
+    margin-top:80px;
 }
 
-/* --------------------------
-   Mobil Uyumluluk
---------------------------- */
+/* ----------------------
+   MODAL
+----------------------- */
+.modal-header, .modal-footer { background-color:#1a1b18; color:#fff; }
+.modal-body { background-color:#32312e; color:#fff; }
+.modal-body p { line-height:2em; }
+
+/* ----------------------
+   RESPONSIVE
+----------------------- */
 @media (max-width: 991.98px) {
-	.navbar-nav {
-		flex-direction: column !important;
-		align-items: flex-start;
-		gap: 10px;
-		width: 100%;
-	}
-	.nav-item { width: 100%; }
-	.nav-link {
-		width: 100%;
-		padding: 12px 20px !important;
-	}
+    header .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    header .nav-link {
+        width: 100%;
+        padding: 12px 20px;
+    }
 }
