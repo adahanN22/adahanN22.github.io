@@ -1,207 +1,149 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Genişler Kuyumculuk - Tokat/Turhal Altın Fiyatları</title>
-<link rel="icon" href="images/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600&family=Poppins:ital,wght@0,300;0,400;0,900;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
-<style>
-body { font-family: 'Poppins', sans-serif; margin:0; }
-header { background:#fff; padding:10px 0; position:fixed; width:100%; top:0; z-index:999; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
-header .logo { max-height:50px; }
-.navbar { padding:0; }
-.navbar-nav { flex-direction: row; }
-.nav-item { margin-left:20px; }
-.table100 { width:100%; border-collapse:collapse; margin-top:120px; }
-.table100 th, .table100 td { border:1px solid #ddd; padding:8px; text-align:center; }
-.table100 th { background:#f2f2f2; }
-.converter-input { width:100%; }
-.modal-body p { margin-bottom:15px; }
-@media(max-width:768px){
-    .navbar-nav { flex-direction: column; text-align:center; }
-    .nav-item { margin-left:0; margin-top:10px; }
-    .table100 { font-size:12px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genişler Kuyumculuk - Tokat/Turhal Altın Fiyatları</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;500;600&family=Poppins:ital,wght@0,300;0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css"/>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        header { background-color: #fff; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top:0; z-index:999; }
+        .navbar { padding:0; }
+        .navbar-nav { align-items:center; }
+        .navbar-nav .nav-item { margin-left:20px; }
+        .logo { max-height:50px; }
+        main { padding:20px 0; }
+        table { width:100%; }
+        .converter-input { width:100%; }
+        @media(max-width:768px){
+            .navbar-nav { flex-direction: column; background:#fff; padding:10px 0; }
+            .navbar-nav .nav-item { margin-left:0; margin-bottom:10px; }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html"><img src="images/logo.png" alt="Genişler Kuyumculuk" class="logo"></a>
+            <nav>
+                <ul class="navbar-nav d-flex flex-row list-unstyled mb-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Altın Fiyatları</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#about">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#contact">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/omer_geniss/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <!-- Güncel Altın Fiyatları Tablosu -->
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Sembol</th>
+                                <th>Satış</th>
+                                <th>Geri Alış</th>
+                                <th>Takas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gold-prices">
+                            <!-- Dinamik veri buraya gelecek -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 22 Ayar ve 24 Ayar Tablosu -->
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr><th colspan="3">22 Ayar Altın</th></tr>
+                            <tr>
+                                <th>Sembol</th>
+                                <th>Satış</th>
+                                <th>Geri Alış</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gold-22"></tbody>
+                    </table>
+                </div>
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr><th colspan="3">24 Ayar Altın</th></tr>
+                            <tr>
+                                <th>Sembol</th>
+                                <th>Satış</th>
+                                <th>Geri Alış</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gold-24"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <!-- Altın Çevirici -->
+                <div class="card mb-4">
+                    <div class="card-header">Altın Çevirici</div>
+                    <div class="card-body">
+                        <table class="table table-sm">
+                            <tbody id="converter-body">
+                                <!-- Dinamik girişler buraya gelecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center py-3">
+        <strong>YASAL UYARI:</strong> Buradaki altın fiyatları bilgi amaçlıdır. Yatırım danışmanlığı değildir.<br>
+        &copy; Genişler Kuyumculuk | Tüm Hakları Saklıdır
+    </footer>
 
-<header>
-<div class="container d-flex justify-content-between align-items-center">
-    <a href="index.html"><img src="images/logo.png" alt="Genişler Kuyumculuk" class="logo"></a>
-    <nav class="navbar">
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#altin">Altın Fiyatları</a></li>
-            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#about">Hakkımızda</a></li>
-            <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#contact">İletişim</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/omer_geniss/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-    </nav>
-</div>
-</header>
+    <!-- Hakkımızda Modal -->
+    <div class="modal fade" id="about" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h3>Hakkımızda</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Tokat/Turhal'da kuyumculuk sektöründe 35 yıllık deneyimle...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<main class="container" id="altin">
-<div class="row">
-<div class="col-md-8">
-<div class="table100">
-    <table id="goldTable">
-        <thead>
-            <tr>
-                <th>Sembol</th>
-                <th>Satış</th>
-                <th>Geri Alış</th>
-                <th>Takas</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dinamik veriler buraya gelecek -->
-        </tbody>
-    </table>
-</div>
+    <!-- İletişim Modal -->
+    <div class="modal fade" id="contact" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"><h5>İletişim</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Adres:</strong> Yavuz Selim Mahallesi...</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@genislerkuyumculuk.com.tr">info@genislerkuyumculuk.com.tr</a></p>
+                    <p><strong>Telefon:</strong> <a href="tel:????">???</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="table100 mt-4">
-    <table id="gold22Table">
-        <thead>
-            <tr>
-                <th>22 Ayar Altın</th>
-                <th>Satış</th>
-                <th>Geri Alış</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dinamik veriler buraya gelecek -->
-        </tbody>
-    </table>
-</div>
-
-<div class="table100 mt-4">
-    <table id="gold24Table">
-        <thead>
-            <tr>
-                <th>24 Ayar Altın</th>
-                <th>Satış</th>
-                <th>Geri Alış</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dinamik veriler buraya gelecek -->
-        </tbody>
-    </table>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card">
-<div class="card-header"><h5>Altın Çevirici</h5></div>
-<div class="card-body">
-    <table class="table">
-        <tbody>
-            <tr>
-                <td>Türk Lirası</td>
-                <td><input type="number" id="tlInput" class="converter-input form-control" value="1"></td>
-            </tr>
-            <tr>
-                <td>22 AYAR (BİLEZİK)</td>
-                <td><input type="number" id="gold22Input" class="converter-input form-control" value="4600"></td>
-            </tr>
-            <tr>
-                <td>18 AYAR (ZİNCİR)</td>
-                <td><input type="number" id="gold18Input" class="converter-input form-control" value="4345"></td>
-            </tr>
-            <tr>
-                <td>ATA LİRA</td>
-                <td><input type="number" id="ataInput" class="converter-input form-control" value="31600"></td>
-            </tr>
-            <tr>
-                <td>OSMANLI</td>
-                <td><input type="number" id="osmanliInput" class="converter-input form-control" value="31600"></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</div>
-</div>
-</div>
-</main>
-
-<footer class="text-center mt-5 mb-3">
-<p><strong>YASAL UYARI:</strong> Burada yer alan haberler ve Tokat/Turhal altın fiyatları bilgi amaçlıdır. Yatırım danışmanlığı kapsamında değildir.</p>
-<p>&copy; Genişler Kuyumculuk | Tüm Hakları Saklıdır. Adahan Aygün tarafından tasarlanmıştır.</p>
-</footer>
-
-<!-- Modallar -->
-<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5>Hakkımızda</h5>
-<button type="button" class="close" data-dismiss="modal">&times;</button>
-</div>
-<div class="modal-body">
-<p>Tokat/Turhal'da kuyumculuk sektöründe 35 yıllık bir birikim ve deneyimle...</p>
-</div>
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5>İletişim</h5>
-<button type="button" class="close" data-dismiss="modal">&times;</button>
-</div>
-<div class="modal-body">
-<p><strong>Adres:</strong> Yavuz Selim Mahallesi, Menderes Cd. NO:29, 60300 Tokat/Turhal</p>
-<p><strong>Email:</strong> <a href="mailto:info@genislerkuyumculuk.com.tr">info@genislerkuyumculuk.com.tr</a></p>
-<p><strong>Telefon:</strong> ???</p>
-</div>
-</div>
-</div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js"></script>
-<script>
-var socket = io.connect('wss://genesisveri.com:1019');
-const authcode = '3P2YT9OW4Y43S1ZEQP6YQQTEJ5RRFA6E';
-socket.emit('authenticate', authcode);
-
-socket.on('authenticated', () => console.log('Doğrulama başarılı'));
-socket.on('authenticationError', err => console.error(err));
-
-socket.on("Tokat/TurhalPRICEDATAS", function(data){
-    var jsonDatas=JSON.parse(data);
-    var arr=JSON.parse(jsonDatas.Datas);
-    var tbody = $('#goldTable tbody');
-    tbody.empty();
-    for(var i in arr){
-        tbody.append(`<tr>
-        <td>${i}</td>
-        <td>${arr[i].selling || '-'}</td>
-        <td>${arr[i].buying || '-'}</td>
-        <td>${arr[i].swap || '-'}</td>
-        </tr>`);
-    }
-});
-
-// Altın Çevirici
-function convert() {
-    let tl = parseFloat($('#tlInput').val());
-    let gold22 = parseFloat($('#gold22Input').val());
-    let gold18 = parseFloat($('#gold18Input').val());
-    let ata = parseFloat($('#ataInput').val());
-    let osmanli = parseFloat($('#osmanliInput').val());
-    $('#gold22Input').val((tl/gold22).toFixed(3));
-    $('#gold18Input').val((tl/gold18).toFixed(3));
-    $('#ataInput').val((tl/ata).toFixed(3));
-    $('#osmanliInput').val((tl/osmanli).toFixed(3));
-}
-$('#tlInput').on('input',convert);
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+    <script src="js/converterf700.js?v=1.0.1"></script>
+    <script src="js/main2c70.js?v=1.0.3"></script>
 </body>
 </html>
