@@ -130,37 +130,38 @@
   </footer>
 
   <!-- JAVASCRIPT API -->
-  <script>
-    async function fetchGoldPrices() {
-      try {
-        // CORS engelini aşmak için proxy kullanıyoruz
-        let response = await fetch("https://api.allorigins.win/raw?url=https://finans.truncgil.com/today.json");
-        let data = await response.json();
+ <script>
+  async function fetchGoldPrices() {
+    try {
+      // Alternatif proxy
+      let response = await fetch("https://corsproxy.io/?https://finans.truncgil.com/today.json");
+      let data = await response.json();
 
-        // Gram
-        document.getElementById("gram-al").innerText = data["Gram Altın"]["Alış"] + " ₺";
-        document.getElementById("gram-sa").innerText = data["Gram Altın"]["Satış"] + " ₺";
+      // Gram
+      document.getElementById("gram-al").innerText = data["Gram Altın"]["Alış"] + " ₺";
+      document.getElementById("gram-sa").innerText = data["Gram Altın"]["Satış"] + " ₺";
 
-        // Çeyrek
-        document.getElementById("ceyrek-al").innerText = data["Çeyrek Altın"]["Alış"] + " ₺";
-        document.getElementById("ceyrek-sa").innerText = data["Çeyrek Altın"]["Satış"] + " ₺";
+      // Çeyrek
+      document.getElementById("ceyrek-al").innerText = data["Çeyrek Altın"]["Alış"] + " ₺";
+      document.getElementById("ceyrek-sa").innerText = data["Çeyrek Altın"]["Satış"] + " ₺";
 
-        // Yarım
-        document.getElementById("yarim-al").innerText = data["Yarım Altın"]["Alış"] + " ₺";
-        document.getElementById("yarim-sa").innerText = data["Yarım Altın"]["Satış"] + " ₺";
+      // Yarım
+      document.getElementById("yarim-al").innerText = data["Yarım Altın"]["Alış"] + " ₺";
+      document.getElementById("yarim-sa").innerText = data["Yarım Altın"]["Satış"] + " ₺";
 
-        // Ons
-        document.getElementById("ons-al").innerText = data["Ons"]["Alış"] + " $";
-        document.getElementById("ons-sa").innerText = data["Ons"]["Satış"] + " $";
+      // Ons
+      document.getElementById("ons-al").innerText = data["Ons"]["Alış"] + " $";
+      document.getElementById("ons-sa").innerText = data["Ons"]["Satış"] + " $";
 
-      } catch (e) {
-        console.error("Veri alınamadı", e);
-      }
+    } catch (e) {
+      console.error("Veri alınamadı", e);
     }
+  }
 
-    fetchGoldPrices();
-    setInterval(fetchGoldPrices, 60000); // her 60 saniyede bir güncelle
-  </script>
+  fetchGoldPrices();
+  setInterval(fetchGoldPrices, 60000); // her 60 saniyede bir güncelle
+</script>
 
 </body>
 </html>
+
