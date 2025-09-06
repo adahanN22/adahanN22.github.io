@@ -5,155 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genişler Kuyumculuk</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fdfcf7;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(90deg, #b8860b, #ffd700);
-      padding: 15px 30px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .hero h2 {
-      font-size: 32px;
-      color: #b8860b;
-    }
-    table {
-      margin: 30px auto;
-      border-collapse: collapse;
-      width: 80%;
-      max-width: 700px;
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    }
-    th, td {
-      padding: 15px;
-      border-bottom: 1px solid #eee;
-      text-align: center;
-      font-size: 18px;
-    }
-    th {
-      background: #ffd700;
-      color: #333;
-      font-size: 20px;
-    }
-    tr:hover {
-      background: #faf3d1;
-    }
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+    body { margin:0; font-family:Arial,sans-serif; background:#fdfcf7; color:#333; }
+    header { background:linear-gradient(90deg,#b8860b,#ffd700); padding:15px 30px; color:white; display:flex; justify-content:space-between; align-items:center; }
+    header h1 { margin:0; font-size:28px; }
+    nav a { margin:0 10px; text-decoration:none; color:white; font-weight:bold; }
+    .hero { text-align:center; padding:40px 20px; }
+    .hero h2 { font-size:32px; color:#b8860b; }
+    table { margin:30px auto; border-collapse:collapse; width:80%; max-width:700px; background:white; border-radius:12px; overflow:hidden; box-shadow:0px 4px 10px rgba(0,0,0,0.1); }
+    th, td { padding:15px; border-bottom:1px solid #eee; text-align:center; font-size:18px; }
+    th { background:#ffd700; color:#333; font-size:20px; }
+    tr:hover { background:#faf3d1; }
+    footer { background:#333; color:white; text-align:center; padding:20px; margin-top:40px; }
   </style>
 </head>
 <body>
 
-  <!-- ÜST MENÜ -->
-  <header>
-    <h1>💎 Genişler Kuyumculuk</h1>
-    <nav>
-      <a href="#">Ana Sayfa</a>
-      <a href="#">Altın Fiyatları</a>
-      <a href="#">Hakkımızda</a>
-      <a href="#">İletişim</a>
-    </nav>
-  </header>
+<header>
+  <h1>💎 Genişler Kuyumculuk</h1>
+  <nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Altın Fiyatları</a>
+    <a href="#">Hakkımızda</a>
+    <a href="#">İletişim</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Güncel Altın Fiyatları</h2>
-    <p>Fiyatlar otomatik olarak güncellenmektedir.</p>
-  </section>
+<section class="hero">
+  <h2>Güncel Altın Fiyatları</h2>
+  <p>Fiyatlar otomatik olarak güncellenmektedir.</p>
+</section>
 
-  <!-- ALTIN FİYATLARI TABLOSU -->
-  <table>
-    <thead>
-      <tr>
-        <th>Ürün</th>
-        <th>Alış</th>
-        <th>Satış</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Gram Altın</td>
-        <td id="gram-al"></td>
-        <td id="gram-sa"></td>
-      </tr>
-      <tr>
-        <td>Çeyrek Altın</td>
-        <td id="ceyrek-al"></td>
-        <td id="ceyrek-sa"></td>
-      </tr>
-      <tr>
-        <td>Yarım Altın</td>
-        <td id="yarim-al"></td>
-        <td id="yarim-sa"></td>
-      </tr>
-      <tr>
-        <td>Ons</td>
-        <td id="ons-al"></td>
-        <td id="ons-sa"></td>
-      </tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>Ürün</th>
+      <th>Alış</th>
+      <th>Satış</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Gram Altın</td><td id="gram-al"></td><td id="gram-sa"></td></tr>
+    <tr><td>Çeyrek Altın</td><td id="ceyrek-al"></td><td id="ceyrek-sa"></td></tr>
+    <tr><td>Yarım Altın</td><td id="yarim-al"></td><td id="yarim-sa"></td></tr>
+    <tr><td>Ons</td><td id="ons-al"></td><td id="ons-sa"></td></tr>
+  </tbody>
+</table>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>📍 Adres: Atatürk Caddesi No:123, İstanbul</p>
-    <p>📞 Telefon: 0 (212) 123 45 67</p>
-    <p>© 2025 Genişler Kuyumculuk | Tüm Hakları Saklıdır</p>
-  </footer>
+<footer>
+  <p>📍 Adres: Atatürk Caddesi No:123, İstanbul</p>
+  <p>📞 Telefon: 0 (212) 123 45 67</p>
+  <p>© 2025 Genişler Kuyumculuk | Tüm Hakları Saklıdır</p>
+</footer>
 
-  <!-- JAVASCRIPT API (CORS sorunsuz) -->
-  <script>
-  async function fetchGoldPrices() {
-    try {
-      let response = await fetch("altin.json");
-      let data = await response.json();
+<script>
+async function fetchGoldPrices() {
+  try {
+    let response = await fetch("https://api.genelpara.com/v1/altin");
+    let data = await response.json();
 
-      document.getElementById("gram-al").innerText = data.gram.al + " ₺";
-      document.getElementById("gram-sa").innerText = data.gram.sat + " ₺";
+    document.getElementById("gram-al").innerText = data.gram.alis + " ₺";
+    document.getElementById("gram-sa").innerText = data.gram.satis + " ₺";
 
-      document.getElementById("ceyrek-al").innerText = data.ceyrek.al + " ₺";
-      document.getElementById("ceyrek-sa").innerText = data.ceyrek.sat + " ₺";
+    document.getElementById("ceyrek-al").innerText = data.ceyrek.alis + " ₺";
+    document.getElementById("ceyrek-sa").innerText = data.ceyrek.satis + " ₺";
 
-      document.getElementById("yarim-al").innerText = data.yarim.al + " ₺";
-      document.getElementById("yarim-sa").innerText = data.yarim.sat + " ₺";
+    document.getElementById("yarim-al").innerText = data.yarim.alis + " ₺";
+    document.getElementById("yarim-sa").innerText = data.yarim.satis + " ₺";
 
-      document.getElementById("ons-al").innerText = data.ons.al + " $";
-      document.getElementById("ons-sa").innerText = data.ons.sat + " $";
+    document.getElementById("ons-al").innerText = data.ons.alis + " $";
+    document.getElementById("ons-sa").innerText = data.ons.satis + " $";
 
-    } catch(e) {
-      console.error("Veri alınamadı", e);
-    }
+  } catch(e) {
+    console.error("Veri alınamadı", e);
   }
+}
 
-  fetchGoldPrices();
-  setInterval(fetchGoldPrices, 60000); // 60 saniyede bir güncelle
+fetchGoldPrices();
+setInterval(fetchGoldPrices, 60000);
 </script>
 
+</body>
+</html>
