@@ -131,36 +131,29 @@
 
   <!-- JAVASCRIPT API (CORS sorunsuz) -->
   <script>
-    async function fetchGoldPrices() {
-      try {
-        // CORS sorunu olmayan API
-        let response = await fetch("https://api.genelpara.com/embed/doviz.json");
-        let data = await response.json();
+  async function fetchGoldPrices() {
+    try {
+      let response = await fetch("altin.json");
+      let data = await response.json();
 
-        // Gram Altın
-        document.getElementById("gram-al").innerText = data.gram.altin.al + " ₺";
-        document.getElementById("gram-sa").innerText = data.gram.altin.sat + " ₺";
+      document.getElementById("gram-al").innerText = data.gram.al + " ₺";
+      document.getElementById("gram-sa").innerText = data.gram.sat + " ₺";
 
-        // Çeyrek Altın
-        document.getElementById("ceyrek-al").innerText = data.ceyrek.altin.al + " ₺";
-        document.getElementById("ceyrek-sa").innerText = data.ceyrek.altin.sat + " ₺";
+      document.getElementById("ceyrek-al").innerText = data.ceyrek.al + " ₺";
+      document.getElementById("ceyrek-sa").innerText = data.ceyrek.sat + " ₺";
 
-        // Yarım Altın
-        document.getElementById("yarim-al").innerText = data.yarim.altin.al + " ₺";
-        document.getElementById("yarim-sa").innerText = data.yarim.altin.sat + " ₺";
+      document.getElementById("yarim-al").innerText = data.yarim.al + " ₺";
+      document.getElementById("yarim-sa").innerText = data.yarim.sat + " ₺";
 
-        // Ons Altın
-        document.getElementById("ons-al").innerText = data.ons.altin.al + " $";
-        document.getElementById("ons-sa").innerText = data.ons.altin.sat + " $";
+      document.getElementById("ons-al").innerText = data.ons.al + " $";
+      document.getElementById("ons-sa").innerText = data.ons.sat + " $";
 
-      } catch(e) {
-        console.error("Veri alınamadı", e);
-      }
+    } catch(e) {
+      console.error("Veri alınamadı", e);
     }
+  }
 
-    fetchGoldPrices();
-    setInterval(fetchGoldPrices, 60000); // her 60 saniyede bir güncelle
-  </script>
+  fetchGoldPrices();
+  setInterval(fetchGoldPrices, 60000); // 60 saniyede bir güncelle
+</script>
 
-</body>
-</html>
