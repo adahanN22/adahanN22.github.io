@@ -1,0 +1,40 @@
+name: Update Altin Prices
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Her saat başı çalışır
+  workflow_dispatch:    # Manuel tetikleme
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Fetch Altin Prices
+        run: |
+          curl -s https://finans.truncgil.com/today.json -o data.json
+          python3 - <<'EOF'
+import json
+with open('data.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+altin = {
+    "gram": {"al": data["Gram Altın"]["Alış"], "sat": data["Gram Altın"]["Satış"]},
+    "ceyrek": {"al": data["Çeyrek Altın"]["Alış"], "sat": data["Çeyrek Altın"]["Satış"]},
+    "yarim": {"al": data["Yarım Altın"]["Alış"], "sat": data["Yarım Altın"]["Satış"]},
+    "ons": {"al": data["Ons"]["Alış"], "sat": data["Ons"]["Satış"]}
+}
+
+with open('altin.json', 'w', encoding='utf-8') as f:
+    json.dump(altin, f, ensure_ascii=False, indent=2)
+EOF
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add altin.json
+          git commit -m "Update altin.json [automated]" || echo "No changes"
+          git push
