@@ -60,7 +60,7 @@
 <script>
 async function fetchGoldPrices() {
   try {
-    let response = await fetch("https://api.genelpara.com/v1/altin");
+    let response = await fetch("https://api.ahmetcadirci.com/finans/1438-altin-fiyatlari-genel-para.html");
     let data = await response.json();
 
     document.getElementById("gram-al").innerText = data.gram.alis + " ₺";
