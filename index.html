@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Genişler Kuyumculuk</title>
   <style>
-    body { margin:0; font-family:Arial,sans-serif; background:#fdfcf7; color:#333; }
-    header { background:linear-gradient(90deg,#b8860b,#ffd700); padding:15px 30px; color:white; display:flex; justify-content:space-between; align-items:center; }
-    header h1 { margin:0; font-size:28px; }
-    nav a { margin:0 10px; text-decoration:none; color:white; font-weight:bold; }
-    .hero { text-align:center; padding:40px 20px; }
-    .hero h2 { font-size:32px; color:#b8860b; }
-    table { margin:30px auto; border-collapse:collapse; width:80%; max-width:700px; background:white; border-radius:12px; overflow:hidden; box-shadow:0px 4px 10px rgba(0,0,0,0.1); }
-    th, td { padding:15px; border-bottom:1px solid #eee; text-align:center; font-size:18px; }
-    th { background:#ffd700; color:#333; font-size:20px; }
-    tr:hover { background:#faf3d1; }
-    footer { background:#333; color:white; text-align:center; padding:20px; margin-top:40px; }
+    body { margin: 0; font-family: Arial; background: #fdfcf7; color: #333; }
+    header { background: linear-gradient(90deg, #b8860b, #ffd700); padding: 15px 30px; color: white; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 28px; }
+    nav a { margin: 0 10px; text-decoration: none; color: white; font-weight: bold; }
+    .hero { text-align: center; padding: 40px 20px; }
+    .hero h2 { font-size: 32px; color: #b8860b; }
+    table { margin: 30px auto; border-collapse: collapse; width: 80%; max-width: 700px; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); }
+    th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; font-size: 18px; }
+    th { background: #ffd700; color: #333; font-size: 20px; }
+    tr:hover { background: #faf3d1; }
+    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; }
   </style>
 </head>
 <body>
@@ -60,26 +60,24 @@
 <script>
 async function fetchGoldPrices() {
   try {
-    let response = await fetch("https://api.ahmetcadirci.com/finans/1438-altin-fiyatlari-genel-para.html");
+    let response = await fetch("altin.json");
     let data = await response.json();
 
-    document.getElementById("gram-al").innerText = data.gram.alis + " ₺";
-    document.getElementById("gram-sa").innerText = data.gram.satis + " ₺";
+    document.getElementById("gram-al").innerText = data.gram.al + " ₺";
+    document.getElementById("gram-sa").innerText = data.gram.sat + " ₺";
 
-    document.getElementById("ceyrek-al").innerText = data.ceyrek.alis + " ₺";
-    document.getElementById("ceyrek-sa").innerText = data.ceyrek.satis + " ₺";
+    document.getElementById("ceyrek-al").innerText = data.ceyrek.al + " ₺";
+    document.getElementById("ceyrek-sa").innerText = data.ceyrek.sat + " ₺";
 
-    document.getElementById("yarim-al").innerText = data.yarim.alis + " ₺";
-    document.getElementById("yarim-sa").innerText = data.yarim.satis + " ₺";
+    document.getElementById("yarim-al").innerText = data.yarim.al + " ₺";
+    document.getElementById("yarim-sa").innerText = data.yarim.sat + " ₺";
 
-    document.getElementById("ons-al").innerText = data.ons.alis + " $";
-    document.getElementById("ons-sa").innerText = data.ons.satis + " $";
-
+    document.getElementById("ons-al").innerText = data.ons.al + " $";
+    document.getElementById("ons-sa").innerText = data.ons.sat + " $";
   } catch(e) {
     console.error("Veri alınamadı", e);
   }
 }
-
 fetchGoldPrices();
 setInterval(fetchGoldPrices, 60000);
 </script>
