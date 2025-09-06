@@ -133,7 +133,8 @@
   <script>
     async function fetchGoldPrices() {
       try {
-        let response = await fetch("https://finans.truncgil.com/today.json");
+        // CORS engelini aşmak için proxy kullanıyoruz
+        let response = await fetch("https://api.allorigins.win/raw?url=https://finans.truncgil.com/today.json");
         let data = await response.json();
 
         // Gram
