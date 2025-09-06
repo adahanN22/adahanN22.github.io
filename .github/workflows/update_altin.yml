@@ -1,0 +1,32 @@
+name: Altın Fiyat Güncelle
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # her saat başı çalışır
+  workflow_dispatch:    # manuel çalıştırma
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run update_altin.py
+        run: python update_altin.py
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add altin.json
+          git commit -m "Altın fiyatları güncellendi"
+          git push
