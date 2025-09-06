@@ -1,21 +1,15 @@
-import requests
-import json
+import requests, json
 
-# Altın fiyatlarını çekiyoruz
 url = "https://finans.truncgil.com/today.json"
-response = requests.get(url)
-data = response.json()
+res = requests.get(url)
+data = res.json()
 
-# Sadece gerekli verileri alıyoruz
-altin = {
+altin_data = {
     "gram": {"al": data["Gram Altın"]["Alış"], "sat": data["Gram Altın"]["Satış"]},
     "ceyrek": {"al": data["Çeyrek Altın"]["Alış"], "sat": data["Çeyrek Altın"]["Satış"]},
     "yarim": {"al": data["Yarım Altın"]["Alış"], "sat": data["Yarım Altın"]["Satış"]},
     "ons": {"al": data["Ons"]["Alış"], "sat": data["Ons"]["Satış"]}
 }
 
-# altin.json dosyasını güncelle
 with open("altin.json", "w", encoding="utf-8") as f:
-    json.dump(altin, f, ensure_ascii=False, indent=2)
-
-print("altin.json güncellendi!")
+    json.dump(altin_data, f, ensure_ascii=False, indent=2)
