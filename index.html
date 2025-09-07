@@ -1,25 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-  
-<!-- Mirrored from zumrutkuyumculuk.com.tr/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Sep 2025 21:16:49 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<html lang="tr">
 <head>
-    <meta http-equiv="Cache-Control" content="no-store" />
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <title>Genişler Kuyumculuk</title>
-    <script type="module" crossorigin src="cache/1752565127881/chunks/index.js"></script>
-    <link rel="modulepreload" crossorigin href="cache/1752565127881/chunks/UOgtGyHO.1752565127881.js">
-    <link rel="stylesheet" crossorigin href="cache/1752565127881/assets/jSNiy8oc.1752565127881.css">
-  <link rel="manifest" href="manifest.html"><script id="vite-plugin-pwa:register-sw" src="registerSW.js"></script></head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <meta charset="UTF-8">
+  <title>Genişler Kuyumculuk</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffbea;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #d4af37;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    /* Slider */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% {transform: translateX(0);}
+      33% {transform: translateX(-100%);}
+      66% {transform: translateX(-200%);}
+      100% {transform: translateX(0);}
+    }
+    /* Takılar */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>Genişler Kuyumculuk</header>
 
-<!-- Mirrored from zumrutkuyumculuk.com.tr/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Sep 2025 21:16:50 GMT -->
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="img/slider (1).jpg" alt="Slider 1">
+      <img src="img/slider (2).jpg" alt="Slider 2">
+      <img src="img/slider (3).jpg" alt="Slider 3">
+    </div>
+  </div>
+
+  <!-- Takı Fotoğrafları -->
+  <section class="gallery">
+    <img src="img/taki (1).jpg" alt="Takı 1">
+    <img src="img/taki (2).jpg" alt="Takı 2">
+    <img src="img/taki (3).jpg" alt="Takı 3">
+    <img src="img/taki (4).jpg" alt="Takı 4">
+    <img src="img/taki (5).jpg" alt="Takı 5">
+    <img src="img/taki (6).jpg" alt="Takı 6">
+    <img src="img/taki (7).jpg" alt="Takı 7">
+    <img src="img/taki (8).jpg" alt="Takı 8">
+    <img src="img/taki (9).jpg" alt="Takı 9">
+    <img src="img/taki (10).jpg" alt="Takı 10">
+    <img src="img/taki (11).jpg" alt="Takı 11">
+    <img src="img/taki (12).jpg" alt="Takı 12">
+    <img src="img/taki (13).jpg" alt="Takı 13">
+    <img src="img/taki (14).jpg" alt="Takı 14">
+    <img src="img/taki (15).jpg" alt="Takı 15">
+  </section>
+</body>
 </html>
